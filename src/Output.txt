@@ -1,0 +1,18 @@
+
+          CASH RECEIPT          
+        SUPERMARKET HOME        
+
+Cashier №1          DATE 26/11/2021
+                    TIME 06:11:47
+___________________________________
+QTY DESCRIPTION     PRICE    TOTAL
+1   Banana          $15,00   $15,00
+5   Apricot         $21,00   $105,00
+1   Kiwi            $19,50   $19,50
+6   Grapes          $17,00   $102,00
+6   Melon           $14,25   $76,95
+    Sale                     $8,55
+___________________________________
+SUBTOTAL                     $327,00
+YOU SAVED                    $24,90
+TOTAL                        $302,10
