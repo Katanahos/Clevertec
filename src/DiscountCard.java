@@ -17,15 +17,4 @@ public enum DiscountCard {
     public int getCardID() {
         return cardID;
     }
-
-    public static DiscountCard fromNumber(Integer number) {
-        if (number != null) {
-            for (DiscountCard discountCard : DiscountCard.values()) {
-                if (number== (discountCard.cardID)) {
-                    return discountCard;
-                }
-            }
-        }
-        return null;
-    }
 }

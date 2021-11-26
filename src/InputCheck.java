@@ -65,7 +65,7 @@ public class InputCheck {
             } catch (NumberFormatException e) {
                 System.out.println("Предъявлена скидочная карта другого магазина");
             }
-            if (DiscountCard.values().length < cardNumber) // номера каточек в базе идут по порядку,номер карточки не может быть больше
+            if (DiscountCard.values().length < cardNumber) // номера каточек в базе идут по порядку, номер карточки не может быть больше
                 System.out.println("Предъявлена неверная скидочная карта");
             else {
                 haveCard = true;

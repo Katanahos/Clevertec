@@ -3,7 +3,16 @@
         SUPERMARKET HOME        
 
 Cashier №1          DATE 26/11/2021
-                    TIME 06:10:32
+                    TIME 06:11:47
 ___________________________________
 QTY DESCRIPTION     PRICE    TOTAL
-1   Banana          $15,00   $15,005   Apricot         $21,00   $105,001   Kiwi            $19,50   $19,506   Grapes          $17,00   $102,006   Melon           $14,25   $76,95    Sale                     $8,55___________________________________SUBTOTAL                     $327,00YOU SAVED                    $24,90TOTAL                        $302,10
+1   Banana          $15,00   $15,00
+5   Apricot         $21,00   $105,00
+1   Kiwi            $19,50   $19,50
+6   Grapes          $17,00   $102,00
+6   Melon           $14,25   $76,95
+    Sale                     $8,55
+___________________________________
+SUBTOTAL                     $327,00
+YOU SAVED                    $24,90
+TOTAL                        $302,10
