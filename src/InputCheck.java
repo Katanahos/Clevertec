@@ -54,7 +54,7 @@ public class InputCheck {
         ArrayList<String> result = new ArrayList<>();
         ArrayList<Integer> product = new ArrayList<>();
         ArrayList<Integer> quantity = new ArrayList<>();
-        int s = 0;                         //  модификатор для списка при наличии/отсутсвии карты
+        int s = 0;                         //  модификатор для списка при наличии/отсутствии карты
         double sum = 0.0;                  //  общая сумма
         double sale = 0.0;                 //  общая скидка
         boolean haveCard = false;
