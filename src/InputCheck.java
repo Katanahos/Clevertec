@@ -21,7 +21,7 @@ public class InputCheck {
     }
 
     public static ArrayList<String> checkRunnerByConsole() { // работа с данными из консоли
-        System.out.println("Введите данные в формате (номер товара-количество) и скидочную карту в формате (card-номер карты) ");
+        System.out.println("Введите данные в формате (номер товара-количество) через пробел и скидочную карту в формате (card-номер карты) ");
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
             String text = bufferedReader.readLine();
             String[] array = text.split(" ");
@@ -88,7 +88,7 @@ public class InputCheck {
 
         for (int i = 0; i < product.size(); i++) {
             if (product.get(i) > Product.values().length) {
-                System.out.println("Такого подукта не существует");
+                System.out.println("Такого продукта не существует");
             } else {
                 Product prod = Product.fromNumber(product.get(i));
                 if (prod.discount && quantity.get(i) > 4) {

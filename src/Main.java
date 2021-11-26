@@ -12,7 +12,7 @@ public class Main {
         while (true) {
             try {
                 System.out.println("Выберите источник данных" +
-                        "\n 1 - с уже заданнами параметрами метода " +
+                        "\n 1 - с уже заданными параметрами метода " +
                         "\n 2 - ввод с консоли " +
                         "\n 3 - чтение с файла");
                 firstAnswer = scanner.nextInt();
@@ -52,7 +52,7 @@ public class Main {
             case 3:
                 check = InputCheck.checkRunnerByFile();
                 break;
-            default:                        // никогда не выполнися, написал чтобы не инициализировать список :)
+            default:                        // никогда не выполнится, написал чтобы не инициализировать список :)
                 check = new ArrayList<>();
                 break;
         }
