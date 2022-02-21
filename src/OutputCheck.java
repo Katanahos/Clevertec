@@ -1,15 +1,12 @@
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class OutputCheck {
     /** вызов метода в зависимости от места вывода данных*/
-    public static void checkInConsole(ArrayList<String> array){ //вывод итогового чека в консоль
+    public static void checkInConsole(ArrayList<String> array) //вывод итогового чека в консоль
+    {
         ArrayList<String> hat = checkTitle();
         for (String printHat : hat)
             System.out.println(printHat);
@@ -18,19 +15,16 @@ public class OutputCheck {
         }
     }
 
-    public static void checkInFile(ArrayList<String> array){ // запись итогового чека в файл
-        System.out.println("Введите путь файла для вывода данных");
-        BufferedWriter writer;
-        while (true) {
-            try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
-                String text = bufferedReader.readLine();
-                File file = new File(text);
+    public static void checkInFile(ArrayList<String> array, String outputData) // запись итогового чека в файл
+    {
+        BufferedWriter writer = null;
+            try {
+                File file = new File(outputData);
                 writer = new BufferedWriter(new FileWriter(file));
-                break;
             } catch (IOException e) {
-                System.out.println("Ошибка ввода/файл не найден+ \n Введите корректный путь");
+                System.out.println("Ошибка ввода/файл не найден");
             }
-        }
+
         ArrayList<String> hat = checkTitle();
         try {
             for (String str : hat) {
@@ -41,6 +35,7 @@ public class OutputCheck {
                 writer.write(str);
                 writer.write("\n");
             }
+
             System.out.println("Чек успешно записан в файл");
             writer.close();
         }catch (IOException e){
@@ -49,7 +44,8 @@ public class OutputCheck {
 
     }
 
-    public static ArrayList<String> checkTitle(){ // создание "шапки" чека
+    public static ArrayList<String> checkTitle() // создание "шапки" чека
+    {
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         SimpleDateFormat time = new SimpleDateFormat("HH:mm:ss");
         Date date = new Date();

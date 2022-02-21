@@ -10,15 +10,26 @@ import java.util.List;
 
 public class InputCheck {
 
-    /**
-     * вызов метода в зависимости от источника данных
-     */
-    public static ArrayList<String> checkRunner(String text) { // работа с данными из параметров
-        String[] array = text.split(" ");
+    public static ArrayList<String> startChoice(){
+        String programData = "3-1 2-5 5-1 4-6 8-6 card-3";
+        String[] array = programData.split(" ");
         return check(array);
     }
 
-    public static ArrayList<String> checkRunnerByConsole() { // работа с данными из консоли
+    public static ArrayList<String> startChoice(String inputData){
+        if(inputData.equals("console")){
+           return checkRunnerByConsole();
+        }else {
+            return checkRunnerByFile(inputData);
+        }
+    }
+
+    /**
+     * вызов метода в зависимости от источника данных
+     */
+
+    public static ArrayList<String> checkRunnerByConsole() // работа с данными из консоли
+    {
         System.out.println("Введите данные в формате (номер товара-количество) через пробел и скидочную карту в формате (card-номер карты) ");
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
             String text = bufferedReader.readLine();
@@ -32,20 +43,19 @@ public class InputCheck {
         return null;
     }
 
-    public static ArrayList<String> checkRunnerByFile() {     // работа с данными из файла
-        System.out.println("Введите путь файла для чтения данных");
-        while (true) {
-            try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
-                String text = bufferedReader.readLine();
-                Path path = Paths.get(text);
+    public static ArrayList<String> checkRunnerByFile(String inputPath) // работа с данными из файла
+    {
+            try{
+                Path path = Paths.get(inputPath);
                 List<String> list = Files.readAllLines(path);
                 String[] array = list.get(0).split(" ");
                 return check(array);
             } catch (IOException e) {
-                System.out.println("Ошибка ввода/файл не найден+ \n Введите корректный путь");
-
+                System.out.println("Ошибка ввода/файл не найден");
+                e.printStackTrace();
             }
-        }
+
+        return null;
     }
 
     public static ArrayList<String> check(String[] array) {
@@ -79,12 +89,13 @@ public class InputCheck {
                 product.add(Integer.parseInt(array[i].substring(0, delimiter)));
                 quantity.add(Integer.parseInt(array[i].substring(delimiter + 1)));
             } catch (Exception e) {
-                System.out.println("В продукте №" + (i + 1) + " заданы неверные данные ");
+                System.out.println("В продукте №" + (i + 1) + " заданы неверные данные");
             }
         }
 
 
-        for (int i = 0; i < product.size(); i++) {
+        for (int i = 0; i < product.size(); i++)// проверка наличия продукта и запись в список
+        {
             if (product.get(i) > Product.values().length) {
                 System.out.println("Такого продукта не существует");
             } else {
